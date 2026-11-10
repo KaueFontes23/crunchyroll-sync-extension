@@ -1,0 +1,38 @@
+{
+  "manifest_version": 3,
+  "name": "Crunchyroll Sync — protótipo",
+  "version": "0.1.0",
+  "description": "Sincroniza comandos normais de reprodução entre participantes autorizadas.",
+  "minimum_chrome_version": "116",
+  "permissions": ["storage", "activeTab"],
+  "host_permissions": [
+    "https://www.crunchyroll.com/*",
+    "https://*.crunchyroll.com/*",
+    "https://identitytoolkit.googleapis.com/*",
+    "https://securetoken.googleapis.com/*",
+    "https://firebaseinstallations.googleapis.com/*",
+    "https://*.firebaseio.com/*",
+    "https://*.firebasedatabase.app/*"
+  ],
+  "action": {
+    "default_title": "Crunchyroll Sync",
+    "default_popup": "popup.html"
+  },
+  "background": {
+    "service_worker": "background.js",
+    "type": "module"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://www.crunchyroll.com/*",
+        "https://*.crunchyroll.com/*"
+      ],
+      "js": ["content.js"],
+      "run_at": "document_idle"
+    }
+  ],
+  "content_security_policy": {
+    "extension_pages": "script-src 'self'; object-src 'self'"
+  }
+}
