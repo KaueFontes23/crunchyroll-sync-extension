@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="color-scheme" content="dark light" />
+    <title>Crunchyroll Sync</title>
+  </head>
+  <body>
+    <main class="app-shell">
+      <header class="header">
+        <div>
+          <p class="eyebrow">WATCH PARTY PRIVADA</p>
+          <h1>Crunchyroll Sync</h1>
+          <p class="tagline">para os amantes de anime que desejam assistir together</p>
+        </div>
+        <span id="connection-badge" class="badge badge-muted">Iniciando</span>
+      </header>
+
+      <section id="config-notice" class="notice notice-warning hidden" role="status">
+        Configure o arquivo <code>.env.local</code> e gere a extensão antes de usar o Firebase.
+      </section>
+
+      <section id="join-panel" class="panel hidden">
+        <h2>Entrar em uma sala</h2>
+        <label for="room-code">Código de convite</label>
+        <div class="inline-form">
+          <input id="room-code" type="text" maxlength="32" autocomplete="off" spellcheck="false" placeholder="Cole o código" />
+          <button id="join-button" class="button button-secondary">Entrar</button>
+        </div>
+        <button id="create-button" class="button button-primary button-wide">Criar sala</button>
+        <p class="fine-print">Para criar, abra a página do episódio desejado e aguarde o player carregar.</p>
+      </section>
+
+      <section id="room-panel" class="panel hidden">
+        <div class="room-heading">
+          <div>
+            <h2>Sala ativa</h2>
+            <p id="room-expiry" class="muted"></p>
+            <p id="current-episode" class="muted"></p>
+          </div>
+          <button id="leave-button" class="button button-quiet">Sair</button>
+        </div>
+
+        <label for="active-room-code">Código de convite</label>
+        <div class="inline-form">
+          <input id="active-room-code" type="text" readonly />
+          <button id="copy-code-button" class="button button-secondary">Copiar</button>
+        </div>
+        <button id="copy-link-button" class="button button-quiet button-wide">Copiar link de convite</button>
+
+        <div class="participants-block">
+          <h3>Na sala</h3>
+          <ul id="participants-list" class="participants-list"></ul>
+        </div>
+
+        <div id="page-warning" class="notice notice-warning hidden" role="status"></div>
+        <div id="sync-warning" class="notice notice-info hidden" role="status"></div>
+        <button id="sync-button" class="button button-primary button-wide">Iniciar sincronização</button>
+        <p class="fine-print">Ao entrar, você abre o episódio atual da host. Enquanto estiver na sala, a troca de episódio é seguida automaticamente. Play, pausa, busca e velocidade só são sincronizados depois de iniciar aqui.</p>
+      </section>
+
+      <p id="status-message" class="status-message" role="status" aria-live="polite"></p>
+      <footer>
+        <span>Protótipo local · sem chat, câmera ou microfone</span>
+        <a class="author-credit" href="https://www.linkedin.com/in/kauefontes2323/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn de Kauê Fontes">by Kauê Fontes</a>
+      </footer>
+    </main>
+    <script type="module" src="/src/popup.ts"></script>
+  </body>
+</html>
