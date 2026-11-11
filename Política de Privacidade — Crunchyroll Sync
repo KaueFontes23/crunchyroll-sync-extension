@@ -1,0 +1,47 @@
+# Política de Privacidade — Crunchyroll Sync
+
+**Última atualização: 11 de novembro de 2026**
+
+Esta política descreve o tratamento de dados pela versão oficial da extensão Crunchyroll Sync, desenvolvida por Kauê Fontes. A extensão é um projeto independente e não é afiliada, patrocinada ou endossada pela Crunchyroll.
+
+## O que a extensão processa
+
+Para criar ou entrar em uma sala, a extensão usa o Firebase Authentication com autenticação anônima. Isso cria um identificador anônimo (UID) e dados técnicos de autenticação geridos pelo Firebase. A extensão não solicita nome, endereço, telefone, e-mail ou senha da pessoa usuária, e não coleta credenciais, cookies ou dados de login da Crunchyroll.
+
+Durante uma sala, a extensão compartilha com o Firebase e com os participantes daquela sala apenas os dados necessários à sincronização: código e metadados da sala, UID anônimo dos participantes, ID ou caminho do episódio atual na Crunchyroll, presença na sala e estado da reprodução. Esse estado pode incluir posição do vídeo, play/pausa, busca, velocidade de reprodução e horários/comandos de sincronização. O episódio é compartilhado para que as pessoas da sala possam acompanhar a mesma página.
+
+A extensão não cria uma lista do histórico completo de navegação nem lê outras abas para sincronizá-las. Não captura nem transmite o vídeo, áudio, legendas, imagens ou textos do episódio. Não inclui chat, câmera ou microfone.
+
+O Firebase pode processar endereço IP e informações do navegador (user-agent) para fornecer e proteger os serviços de autenticação e banco de dados. Esses dados técnicos são tratados pelo Firebase/Google conforme a [documentação de privacidade do Firebase](https://firebase.google.com/support/privacy).
+
+## Como os dados são usados e compartilhados
+
+Os dados são usados para autenticar anonimamente cada participante, controlar o acesso à sala, mostrar presença e sincronizar episódio e reprodução. O código de convite permite que quem o receber tente entrar na sala; compartilhe-o apenas com as pessoas desejadas.
+
+Os dados da sala são armazenados no Firebase Realtime Database e podem ser lidos pelos participantes autorizados daquela sala. O Firebase/Google processa os dados como fornecedor dos serviços usados pela extensão. Não vendo dados, não os uso para publicidade personalizada e não os uso para fins não relacionados à sincronização. Não transfiro dados para corretores de dados ou plataformas de publicidade.
+
+O uso e a transferência de dados limitam-se a fornecer, manter e proteger a finalidade única da extensão, conforme a [Política de Dados de Usuários da Chrome Web Store, incluindo os requisitos de uso limitado](https://developer.chrome.com/docs/webstore/program-policies/limited-use).
+
+## Armazenamento e retenção
+
+A extensão guarda informações da sessão ativa no armazenamento de sessão do Chrome para poder restaurar a conexão com a sala. Essa cópia local é removida quando a pessoa sai explicitamente da sala ou quando o Chrome limpa os dados de sessão da extensão.
+
+As salas deixam de ser utilizáveis após 12 horas: as regras do banco bloqueiam o acesso após esse prazo. **Essa expiração é lógica, não uma exclusão física. Na versão atual, os registros da sala no Realtime Database não são apagados automaticamente e podem permanecer armazenados até serem removidos manualmente pelo responsável pelo projeto Firebase.** Sair da sala remove a presença e a associação do participante que saiu, mas não garante a exclusão dos demais dados da sala.
+
+A identidade anônima criada no Firebase Authentication também não é excluída automaticamente quando a pessoa sai de uma sala. Ela pode permanecer no projeto Firebase até ser removida separadamente pelo responsável pelo projeto. O Firebase pode aplicar seus próprios prazos de retenção a registros técnicos e cópias de segurança, conforme a documentação citada acima.
+
+## Escolhas e solicitações de exclusão
+
+A pessoa pode deixar uma sala e interromper a sincronização a qualquer momento. Para solicitar a exclusão manual dos dados de uma sala, envie um e-mail para **kauefontes23@gmail.com** com o código da sala, para que ela possa ser localizada. A solicitação é tratada manualmente; sair da sala, fechar o navegador ou desinstalar a extensão não apaga automaticamente todos os registros do Firebase.
+
+## Segurança
+
+A extensão usa as regras de segurança do Firebase para limitar o acesso aos membros autorizados de cada sala e comunica-se com os serviços Firebase por conexões seguras. O código de convite deve ser tratado como privado, pois é usado para solicitar entrada na sala.
+
+## Alterações nesta política
+
+Esta política poderá ser atualizada se o funcionamento ou os dados tratados pela extensão mudarem. A versão vigente será publicada nesta página, com a data da última atualização.
+
+## Contato
+
+Dúvidas ou solicitações relacionadas à privacidade: [kauefontes23@gmail.com](mailto:kauefontes23@gmail.com).
